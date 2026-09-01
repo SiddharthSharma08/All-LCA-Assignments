@@ -1,0 +1,26 @@
+# Assignment 3
+# Program to check whether a triangle is right-angled
+
+side1 = float(input("Enter the first side: "))
+side2 = float(input("Enter the second side: "))
+side3 = float(input("Enter the third side: "))
+
+# Find the largest side
+if side1 >= side2 and side1 >= side3:
+    largest = side1
+    other1 = side2
+    other2 = side3
+elif side2 >= side1 and side2 >= side3:
+    largest = side2
+    other1 = side1
+    other2 = side3
+else:
+    largest = side3
+    other1 = side1
+    other2 = side2
+
+# Check Pythagorean theorem
+if other1 ** 2 + other2 ** 2 == largest ** 2:
+    print("The triangle is a right-angled triangle.")
+else:
+    print("The triangle is not a right-angled triangle.")
