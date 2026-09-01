@@ -1,40 +1,70 @@
-# Assignment 1
-# Dictionary, Tuple and List Data Structures
+# ================== RUN THIS ENTIRE BLOCK TOGETHER ==================
 
-# Creating a list of students
-students_list = ["Rahul", "Aman", "Priya", "Sneha"]
+# ---------- LIST METHODS ----------
+# (Run this section first if testing separately in Jupyter)
+print("list")
+students = ["Amit", "Riya", "Sana", "John"]
+print("Original List:", students)
 
-# Creating a tuple of students
-students_tuple = ("Rahul", "Aman", "Priya", "Sneha")
+students.append("Meera")                      # append() - add item to end
+print("After append('Meera'):", students)
 
-# Creating a dictionary of students
-students_dict = {
-    1: "Rahul",
-    2: "Aman",
-    3: "Priya",
-    4: "Sneha"
-}
+students.insert(1, "Karan")                    # insert() - insert at specific index
+print("After insert(1, 'Karan'):", students)
 
-print("List of students:")
-print(students_list)
+students.remove("Sana")                        # remove() - delete first matching item
+print("After remove('Sana'):", students)
 
-print("\nTuple of students:")
-print(students_tuple)
+students.sort()                                # sort() - sort the list in place
+print("After sort():", students)
 
-print("\nDictionary of students:")
-print(students_dict)
+removed_student = students.pop(0)              # pop() - remove and return item by index
+print("After pop(0):", students)
+print("Removed item:", removed_student)
 
-# ADD operation
-students_dict[5] = "Rohan"
-print("\nAfter adding a student:")
-print(students_dict)
 
-# UPDATE operation
-students_dict[2] = "Aditya"
-print("\nAfter updating a student:")
-print(students_dict)
+# ---------- TUPLE METHODS ----------
+# (Run this section after List section, or independently — no dependency on List)
+print("\ntuple")
+student_tuple = ("Amit", "Riya", "Sana", "John", "Riya")
+print("Original Tuple:", student_tuple)
 
-# DELETE operation
-del students_dict[3]
-print("\nAfter deleting a student:")
-print(students_dict)
+count_riya = student_tuple.count("Riya")       # count() - count occurrences of a value
+print("count('Riya'):", count_riya)
+
+index_sana = student_tuple.index("Sana")       # index() - find first index of a value
+print("index('Sana'):", index_sana)
+
+sliced = student_tuple[1:3]                    # Slicing - extract a sub-tuple
+print("Slicing [1:3]:", sliced)
+
+new_tuple = student_tuple + ("Meera", "Karan") # Concatenation - combine two tuples
+print("Concatenation (+):", new_tuple)
+
+a, b, c, d, e = student_tuple                  # Unpacking - assign tuple elements to variables
+print("Unpacked values:", a, b, c, d, e)
+
+
+# ---------- DICTIONARY METHODS ----------
+# (Run this section after Tuple section, or independently — no dependency on List/Tuple)
+print("\ndictionary")
+student_dict = {101: "Amit", 102: "Riya", 103: "Sana", 104: "John"}
+print("Original Dictionary:", student_dict)
+
+print("keys():", list(student_dict.keys()))            # keys() - get all keys
+print("values():", list(student_dict.values()))        # values() - get all values
+print("items():", list(student_dict.items()))          # items() - get all key-value pairs
+
+roll_no = student_dict.get(105, "Not Found")   # get() - safely fetch value with default
+print("get(105, 'Not Found'):", roll_no)
+
+student_dict.update({105: "Meera", 102: "Priya"})   # update() - merge/modify entries
+print("After update({105: 'Meera', 102: 'Priya'}):", student_dict)
+
+removed_val = student_dict.pop(104)            # pop() - remove and return value by key
+print("After pop(104):", student_dict, "| Removed value:", removed_val)
+
+student_dict.setdefault(106, "Karan")          # setdefault() - get or insert default
+print("After setdefault(106, 'Karan'):", student_dict)
+
+# ================== END OF BLOCK ================== assignment 1
