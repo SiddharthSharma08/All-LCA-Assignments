@@ -1,0 +1,40 @@
+# Assignment 1
+# Dictionary, Tuple and List Data Structures
+
+# Creating a list of students
+students_list = ["Rahul", "Aman", "Priya", "Sneha"]
+
+# Creating a tuple of students
+students_tuple = ("Rahul", "Aman", "Priya", "Sneha")
+
+# Creating a dictionary of students
+students_dict = {
+    1: "Rahul",
+    2: "Aman",
+    3: "Priya",
+    4: "Sneha"
+}
+
+print("List of students:")
+print(students_list)
+
+print("\nTuple of students:")
+print(students_tuple)
+
+print("\nDictionary of students:")
+print(students_dict)
+
+# ADD operation
+students_dict[5] = "Rohan"
+print("\nAfter adding a student:")
+print(students_dict)
+
+# UPDATE operation
+students_dict[2] = "Aditya"
+print("\nAfter updating a student:")
+print(students_dict)
+
+# DELETE operation
+del students_dict[3]
+print("\nAfter deleting a student:")
+print(students_dict)
