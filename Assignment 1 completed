@@ -1,70 +1,217 @@
-# ================== RUN THIS ENTIRE BLOCK TOGETHER ==================
-
-# ---------- LIST METHODS ----------
-# (Run this section first if testing separately in Jupyter)
-print("list")
-students = ["Amit", "Riya", "Sana", "John"]
-print("Original List:", students)
-
-students.append("Meera")                      # append() - add item to end
-print("After append('Meera'):", students)
-
-students.insert(1, "Karan")                    # insert() - insert at specific index
-print("After insert(1, 'Karan'):", students)
-
-students.remove("Sana")                        # remove() - delete first matching item
-print("After remove('Sana'):", students)
-
-students.sort()                                # sort() - sort the list in place
-print("After sort():", students)
-
-removed_student = students.pop(0)              # pop() - remove and return item by index
-print("After pop(0):", students)
-print("Removed item:", removed_student)
+# ============================================================
+# LAB ASSIGNMENT 1 - DICTIONARY, TUPLE AND LIST
+# ============================================================
 
 
-# ---------- TUPLE METHODS ----------
-# (Run this section after List section, or independently — no dependency on List)
-print("\ntuple")
-student_tuple = ("Amit", "Riya", "Sana", "John", "Riya")
-print("Original Tuple:", student_tuple)
+# ------------------------------------------------------------
+# QUESTION 1
+# Assign 5 elements in dictionary named my_dict.
+# Add and delete student information and display it.
+# ------------------------------------------------------------
 
-count_riya = student_tuple.count("Riya")       # count() - count occurrences of a value
-print("count('Riya'):", count_riya)
+print("QUESTION 1")
 
-index_sana = student_tuple.index("Sana")       # index() - find first index of a value
-print("index('Sana'):", index_sana)
+my_dict = {
+    "name": "ABC",
+    "rollno": 34,
+    "branch": "AI & DS",
+    "age": 18,
+    "marks": 85
+}
 
-sliced = student_tuple[1:3]                    # Slicing - extract a sub-tuple
-print("Slicing [1:3]:", sliced)
+print("Original dictionary:", my_dict)
 
-new_tuple = student_tuple + ("Meera", "Karan") # Concatenation - combine two tuples
-print("Concatenation (+):", new_tuple)
+# Adding student information
+my_dict["city"] = "Pune"
 
-a, b, c, d, e = student_tuple                  # Unpacking - assign tuple elements to variables
-print("Unpacked values:", a, b, c, d, e)
+print("After adding city:", my_dict)
+
+# Deleting student information
+del my_dict["age"]
+
+print("After deleting age:", my_dict)
+print()
 
 
-# ---------- DICTIONARY METHODS ----------
-# (Run this section after Tuple section, or independently — no dependency on List/Tuple)
-print("\ndictionary")
-student_dict = {101: "Amit", 102: "Riya", 103: "Sana", 104: "John"}
-print("Original Dictionary:", student_dict)
+# ------------------------------------------------------------
+# QUESTION 2
+# Convert two lists into a dictionary.
+# ------------------------------------------------------------
 
-print("keys():", list(student_dict.keys()))            # keys() - get all keys
-print("values():", list(student_dict.values()))        # values() - get all values
-print("items():", list(student_dict.items()))          # items() - get all key-value pairs
+print("QUESTION 2")
 
-roll_no = student_dict.get(105, "Not Found")   # get() - safely fetch value with default
-print("get(105, 'Not Found'):", roll_no)
+list1 = ["name", "panel", "rollno"]
+list2 = ["ABC", "B", 34]
 
-student_dict.update({105: "Meera", 102: "Priya"})   # update() - merge/modify entries
-print("After update({105: 'Meera', 102: 'Priya'}):", student_dict)
+my_dict = dict(zip(list1, list2))
 
-removed_val = student_dict.pop(104)            # pop() - remove and return value by key
-print("After pop(104):", student_dict, "| Removed value:", removed_val)
+print("List 1:", list1)
+print("List 2:", list2)
+print("Dictionary:", my_dict)
+print()
 
-student_dict.setdefault(106, "Karan")          # setdefault() - get or insert default
-print("After setdefault(106, 'Karan'):", student_dict)
 
-# ================== END OF BLOCK ================== assignment 1
+# ------------------------------------------------------------
+# QUESTION 3
+# Sort the elements of the dictionary using sorted() function.
+# ------------------------------------------------------------
+
+print("QUESTION 3")
+
+my_dict = {
+    "name": "ABC",
+    "panel": "B",
+    "rollno": 34,
+    "marks": [65, 87, 67, 94]
+}
+
+print("Dictionary:", my_dict)
+print("Sorted dictionary keys:", sorted(my_dict))
+print()
+
+
+# ------------------------------------------------------------
+# QUESTION 4
+# Convert a dictionary to lists.
+# Make one list of keys and another of values.
+# ------------------------------------------------------------
+
+print("QUESTION 4")
+
+my_dict = {
+    "name": "ABC",
+    "panel": "B",
+    "rollno": 34,
+    "marks": 85
+}
+
+keys_list = list(my_dict.keys())
+values_list = list(my_dict.values())
+
+print("Dictionary:", my_dict)
+print("List of keys:", keys_list)
+print("List of values:", values_list)
+print()
+
+
+# ------------------------------------------------------------
+# QUESTION 5
+# Find the mean of values of dictionary.
+# ------------------------------------------------------------
+
+print("QUESTION 5")
+
+my_dict = {
+    "marks1": 23,
+    "marks2": 123,
+    "marks3": 43,
+    "marks4": 13,
+    "marks5": 39
+}
+
+total = sum(my_dict.values())
+mean = total / len(my_dict)
+
+print("Dictionary:", my_dict)
+print("Mean of all values:", mean)
+print()
+
+
+# ------------------------------------------------------------
+# QUESTION 6
+# Perform operations on the given dictionary:
+# a) Display name as Dev
+# b) Display 12 roll no
+# c) Display greatest marks
+# ------------------------------------------------------------
+
+print("QUESTION 6")
+
+my_dict = {
+    "name": ["Yash", "Neel", "Dev"],
+    "rollno": [11, 12, 13],
+    "marks": [78, 56, 98]
+}
+
+# a) Display name as Dev
+print("Name:", my_dict["name"][2])
+
+# b) Display 12 roll no
+print("Roll no:", my_dict["rollno"][1])
+
+# c) Display greatest marks
+print("Greatest marks:", max(my_dict["marks"]))
+print()
+
+
+# ------------------------------------------------------------
+# QUESTION 7
+# Calculate frequency of letters occurring in a given string.
+# ------------------------------------------------------------
+
+print("QUESTION 7")
+
+string = input("Enter a string: ")
+
+frequency = {}
+
+for letter in string:
+    if letter in frequency:
+        frequency[letter] = frequency[letter] + 1
+    else:
+        frequency[letter] = 1
+
+print("Frequency of letters:", frequency)
+print()
+
+
+# ------------------------------------------------------------
+# QUESTION 8
+# Take numerator and denominator from user and give output
+# as a tuple of Quotient and Remainder.
+# ------------------------------------------------------------
+
+print("QUESTION 8")
+
+numerator = int(input("Enter numerator: "))
+denominator = int(input("Enter denominator: "))
+
+quotient = numerator // denominator
+remainder = numerator % denominator
+
+result = (quotient, remainder)
+
+print("Tuple of Quotient and Remainder:", result)
+print()
+
+
+# ------------------------------------------------------------
+# QUESTION 9
+# Date is represented as a tuple (d, m, y).
+# Create two date tuples from user input and find the number
+# of days between the two dates.
+# ------------------------------------------------------------
+
+print("QUESTION 9")
+
+from datetime import date
+
+d1 = int(input("Enter first date (day): "))
+m1 = int(input("Enter first date (month): "))
+y1 = int(input("Enter first date (year): "))
+
+d2 = int(input("Enter second date (day): "))
+m2 = int(input("Enter second date (month): "))
+y2 = int(input("Enter second date (year): "))
+
+date_tuple1 = (d1, m1, y1)
+date_tuple2 = (d2, m2, y2)
+
+date1 = date(y1, m1, d1)
+date2 = date(y2, m2, d2)
+
+days = abs((date2 - date1).days)
+
+print("First date tuple:", date_tuple1)
+print("Second date tuple:", date_tuple2)
+print("Number of days between the two dates:", days)
