@@ -1,0 +1,9 @@
+import re
+
+pattern = r"[a-zA-Z0-9]+"
+
+text1 = "Example2"
+
+t1 = bool(re.fullmatch(pattern, text1))
+
+print(t1)
