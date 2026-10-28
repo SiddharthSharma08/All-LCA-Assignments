@@ -1,0 +1,49 @@
+
+import pandas as pd
+
+# Create a sample dataset
+data = {
+    "Student": ["Amit", "Bhavna", "Chetan", "Diya", "Amit"],
+    "Maths": [75, 82, None, 90, 75],
+    "Python": [80, None, 70, 92, 80],
+    "City": ["Pune", "Mumbai", "Pune", "Nashik", "Pune"]
+}
+
+df = pd.DataFrame(data)
+
+# Display the original dataset
+print("Original Dataset:")
+print(df)
+
+# Display basic information
+print("\nDataset Information:")
+df.info()
+
+print("\nDataset Description:")
+print(df.describe(include="all"))
+
+# Check missing values
+print("\nMissing Values:")
+print(df.isnull().sum())
+
+# Fill missing numerical values with column means
+df["Maths"] = df["Maths"].fillna(df["Maths"].mean())
+df["Python"] = df["Python"].fillna(df["Python"].mean())
+
+# Remove duplicate records
+df = df.drop_duplicates()
+
+print("\nDataset After Removing Duplicates:")
+print(df)
+
+# Select specific columns
+print("\nStudent Names and Maths Marks:")
+print(df.loc[:, ["Student", "Maths"]])
+
+# Filter students with Maths marks greater than 80
+print("\nStudents with Maths Marks Greater Than 80:")
+print(df.loc[df["Maths"] > 80])
+
+# Display the cleaned dataset
+print("\nFinal Cleaned Dataset:")
+print(df)
